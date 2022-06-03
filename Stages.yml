@@ -1,0 +1,24 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+# Pipelines > Stages > Jobs > Tasks(Steps)
+stages:
+- stage: Build
+  jobs:
+  - job: FirstJob
+  steps:
+  - bash: echo Build FirstJob
+  -job: SecondJob
+  steps:
+  -bash: echo Build SecondJob 
+- stage: Dev
+- stage: QA
+- stage: Prod
+
+
+  steps:
+  - script: echo Job1 - Step 1!
+    displayName: 'Run a one-line script'
